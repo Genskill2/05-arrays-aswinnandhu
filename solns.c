@@ -41,11 +41,22 @@ float average(int arr[],int n)
 
 int mode(int arr[],int n)
 {
+
+
+  int i;
  int max;
- max1=max(arr,n);
+ max=arr[0];
+ for(i=1;i<n;i++)
+ {
+  if(arr[i]>max)
+   max=arr[i];
+ }
+
+
+
  int temp;
- temp=max1+1;
- int i,j;
+ temp=max+1;
+ int j;
  int count[temp];
  int counts;
  for(i=0;i<temp;i++)
@@ -56,10 +67,17 @@ int mode(int arr[],int n)
        if(arr[j]==i)
        counts++;
      }
-   count[i]=count;
+   count[i]=counts;
  }
 
- max1=max(count,temp);
+ int max1;
+ max1=count[0];
+ for(i=1;i<temp;i++)
+ {
+  if(count[i]>max)
+   max1=count[i];
+ }
+ 
  for(i=0;i<temp;i++)
   {
     if(count[i]==max1)
