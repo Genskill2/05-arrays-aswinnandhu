@@ -107,6 +107,10 @@ int factors(int num,int arr[])
    num=num/j;
   } 
  }
- 
+if(num > 2) {
+     arr[i]=num;
+     ++i;
+   } 
+
 return i;
 }
