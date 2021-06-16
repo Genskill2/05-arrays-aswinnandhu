@@ -39,54 +39,25 @@ float average(int arr[],int n)
  return (float)sum/n;
 }
 
-int mode(int arr[],int n)
-{
+int mode(int a[],int n) {
+   int maxValue = 0, maxCount = 0, i, j;
 
+   for (i = 0; i < n; ++i) {
+      int count = 0;
+      
+      for (j = 0; j < n; ++j) {
+         if (a[j] == a[i])
+         ++count;
+      }
+      
+      if (count > maxCount) {
+         maxCount = count;
+         maxValue = a[i];
+      }
+   }
 
-  int i;
- int max;
- max=arr[0];
- for(i=1;i<n;i++)
- {
-  if(arr[i]>max)
-   max=arr[i];
- }
-
-
-
- int temp;
- temp=max+1;
- int j;
- int count[temp];
- int counts;
- for(i=0;i<temp;i++)
- {
-   counts=0;
-   for(j=0;j<n;j++)
-     {
-       if(arr[j]==i)
-       counts++;
-     }
-   count[i]=counts;
- }
-
- int max1;
- max1=count[0];
- for(i=1;i<temp;i++)
- {
-  if(count[i]>max)
-   max1=count[i];
- }
- 
- for(i=0;i<temp;i++)
-  {
-    if(count[i]==max1)
-       break;
-  }
- 
- return i;
+   return maxValue;
 }
-
 
 int factors(int num,int arr[])
 {
