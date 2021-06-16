@@ -1,17 +1,18 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
+#include <math.h>
 
 int max(int arr[],int n)
 {
  int i;
  int max;
- int max=arr[0];
+ max=arr[0];
  for(i=1;i<n;i++)
  {
   if(arr[i]>max)
    max=arr[i];
  }
- return max
+ return max;
 }
 
 
@@ -19,13 +20,13 @@ int min(int arr[],int n)
 {
  int i;
  int min;
- int min=arr[0];
+ min=arr[0];
  for(i=1;i<n;i++)
  {
   if(arr[i]<min)
    min=arr[i];
  }
- return min
+ return min;
 }
 
 
@@ -41,9 +42,9 @@ float average(int arr[],int n)
 int mode(int arr[],int n)
 {
  int max;
- max=max(arr,n);
+ max1=max(arr,n);
  int temp;
- temp=max+1;
+ temp=max1+1;
  int i,j;
  int count[temp];
  int counts;
@@ -58,10 +59,10 @@ int mode(int arr[],int n)
    count[i]=count;
  }
 
- max=max(count,temp);
+ max1=max(count,temp);
  for(i=0;i<temp;i++)
   {
-    if(count[i]==max)
+    if(count[i]==max1)
        break;
   }
  
